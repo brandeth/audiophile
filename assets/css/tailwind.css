@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-brand-500: 216 125 74;
+    --color-brand-400: 251 175 133;
+    --color-neutral-900: 16 16 16;
+    --color-neutral-100: 241 241 241;
+    --color-neutral-50: 250 250 250;
+    --color-white: 255 255 255;
+    --color-black: 0 0 0;
+  }
+
+  body {
+    @apply font-sans;
+  }
+}
+
+@layer utilities {
+  .text-h1 {
+    @apply font-sans font-bold uppercase;
+    font-size: 56px;
+    line-height: 58px;
+    letter-spacing: 2px;
+  }
+
+  .text-h2 {
+    @apply font-sans font-bold uppercase;
+    font-size: 40px;
+    line-height: 44px;
+    letter-spacing: 1.5px;
+  }
+
+  .text-h3 {
+    @apply font-sans font-bold uppercase;
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: 1.15px;
+  }
+
+  .text-h4 {
+    @apply font-sans font-bold uppercase;
+    font-size: 28px;
+    line-height: 38px;
+    letter-spacing: 2px;
+  }
+
+  .text-h5 {
+    @apply font-sans font-bold uppercase;
+    font-size: 24px;
+    line-height: 33px;
+    letter-spacing: 1.7px;
+  }
+
+  .text-h6 {
+    @apply font-sans font-bold uppercase;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 1.3px;
+  }
+
+  .text-overline {
+    @apply font-sans font-normal uppercase;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 10px;
+  }
+
+  .text-subtitle {
+    @apply font-sans font-bold uppercase;
+    font-size: 13px;
+    line-height: 25px;
+    letter-spacing: 1px;
+  }
+
+  .text-body {
+    @apply font-sans font-medium;
+    font-size: 15px;
+    line-height: 25px;
+  }
+}
