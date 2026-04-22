@@ -1,5 +1,19 @@
 import type { Config } from "tailwindcss";
 
+const palette = {
+  brand: {
+    400: "#FBAF85",
+    500: "#D87D4A",
+  },
+  neutral: {
+    50: "#FAFAFA",
+    100: "#F1F1F1",
+    900: "#101010",
+  },
+  white: "#FFFFFF",
+  black: "#000000",
+} as const;
+
 export default {
   content: [
     "./app/**/*.{vue,js,ts}",
@@ -12,19 +26,7 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        brand: {
-          400: "rgb(var(--color-brand-400) / <alpha-value>)",
-          500: "rgb(var(--color-brand-500) / <alpha-value>)",
-        },
-        neutral: {
-          50: "rgb(var(--color-neutral-50) / <alpha-value>)",
-          100: "rgb(var(--color-neutral-100) / <alpha-value>)",
-          900: "rgb(var(--color-neutral-900) / <alpha-value>)",
-        },
-        white: "rgb(var(--color-white) / <alpha-value>)",
-        black: "rgb(var(--color-black) / <alpha-value>)",
-      },
+      colors: palette,
       fontFamily: {
         sans: ["Manrope", "sans-serif"],
       },
