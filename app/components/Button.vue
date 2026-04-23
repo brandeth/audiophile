@@ -8,7 +8,7 @@ const props = withDefaults(
     label?: string;
     to?: RouteLocationRaw;
     type?: "button" | "submit" | "reset";
-    variant?: "primary" | "secondary";
+    variant?: "primary" | "secondary" | "link";
   }>(),
   {
     href: undefined,
@@ -20,30 +20,93 @@ const props = withDefaults(
 );
 
 const baseButtonClassName =
-  "inline-flex min-h-12 w-fit items-center justify-center px-8 py-4 text-subtitle leading-none transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2";
+  "group inline-flex w-fit items-center justify-center text-subtitle leading-none transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2";
 
 const buttonVariants = {
   primary:
-    "border border-transparent bg-brand-500 text-white hover:bg-brand-400 focus-visible:outline-brand-400",
+    "min-h-12 min-w-40 border border-transparent bg-brand-500 px-8 py-4 text-white hover:bg-brand-400 focus-visible:outline-brand-400",
   secondary:
-    "border border-black bg-white text-black hover:bg-black hover:text-white focus-visible:outline-black",
+    "min-h-12 min-w-40 border border-black bg-white px-8 py-4 text-black hover:bg-black hover:text-white focus-visible:outline-black",
+  link: "gap-[13px] border-none bg-transparent px-0 py-0 focus-visible:outline-brand-400",
 } as const;
 
 const buttonClassName = computed(
   () => `${baseButtonClassName} ${buttonVariants[props.variant]}`,
 );
+
+const buttonLabelClassName = computed(() =>
+  props.variant === "link"
+    ? "text-black/50 transition-colors duration-200 group-hover:text-brand-500 group-focus-visible:text-brand-500"
+    : undefined,
+);
+
+const showsArrowIcon = computed(() => props.variant === "link");
 </script>
 
 <template>
   <NuxtLink v-if="to" :to="to" :class="buttonClassName">
-    <slot>{{ label }}</slot>
+    <span :class="buttonLabelClassName">
+      <slot>{{ label }}</slot>
+    </span>
+    <svg
+      v-if="showsArrowIcon"
+      class="h-3 w-2 shrink-0 text-brand-500"
+      viewBox="0 0 8 12"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <path
+        d="M1 1L6 6L1 11"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
   </NuxtLink>
 
   <a v-else-if="href" :href="href" :class="buttonClassName">
-    <slot>{{ label }}</slot>
+    <span :class="buttonLabelClassName">
+      <slot>{{ label }}</slot>
+    </span>
+    <svg
+      v-if="showsArrowIcon"
+      class="h-3 w-2 shrink-0 text-brand-500"
+      viewBox="0 0 8 12"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <path
+        d="M1 1L6 6L1 11"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
   </a>
 
   <button v-else :type="type" :class="buttonClassName">
-    <slot>{{ label }}</slot>
+    <span :class="buttonLabelClassName">
+      <slot>{{ label }}</slot>
+    </span>
+    <svg
+      v-if="showsArrowIcon"
+      class="h-3 w-2 shrink-0 text-brand-500"
+      viewBox="0 0 8 12"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <path
+        d="M1 1L6 6L1 11"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
   </button>
 </template>
