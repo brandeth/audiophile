@@ -43,6 +43,18 @@
           <p class="mt-3 text-overline">Audiophile</p>
         </article>
       </section>
+
+      <section
+        class="space-y-4 rounded-3xl border border-white/10 bg-neutral-900 p-6"
+      >
+        <p class="text-subtitle text-neutral-100">CTA preview</p>
+
+        <div class="flex flex-wrap gap-4">
+          <Button label="See Product" />
+          <Button to="/" label="See Product" />
+          <Button variant="secondary" label="See Product" />
+        </div>
+      </section>
     </main>
   </div>
 </template>
