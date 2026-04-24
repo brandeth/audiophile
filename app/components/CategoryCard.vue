@@ -19,7 +19,7 @@ withDefaults(
       :src="imageSrc"
       alt=""
       aria-hidden="true"
-      class="pointer-events-none absolute left-1/2 top-0 h-[160px] w-auto -translate-x-1/2 -translate-y-1/2 object-contain"
+      class="pointer-events-none absolute left-1/2 top-[1.5rem] h-[160px] w-auto -translate-x-1/2 -translate-y-1/2 object-contain"
     />
 
     <div class="flex h-full flex-col items-center justify-end text-center">
