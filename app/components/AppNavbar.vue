@@ -130,7 +130,6 @@ watch(
           </svg>
         </button>
       </div>
-
     </div>
 
     <Transition
