@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, watch } from "vue";
+import logoSrc from "~~/assets/images/logo.svg";
 
 const route = useRoute();
 const isMobileMenuOpen = ref(false);
@@ -77,10 +78,10 @@ watch(
 
         <NuxtLink
           to="/"
-          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[2.125rem] font-extrabold lowercase leading-none tracking-[-0.08em] text-white transition-colors duration-200 hover:text-brand-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-400 lg:static lg:translate-x-0 lg:translate-y-0"
+          class="absolute left-1/2 top-1/2 inline-flex -translate-x-1/2 -translate-y-1/2 items-center justify-center transition-opacity duration-200 hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-400 lg:static lg:translate-x-0 lg:translate-y-0"
           aria-label="Audiophile home"
         >
-          audiophile
+          <img :src="logoSrc" alt="Audiophile" class="h-[25px] w-[143px]" />
         </NuxtLink>
 
         <nav
