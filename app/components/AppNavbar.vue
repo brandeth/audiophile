@@ -37,7 +37,7 @@ watch(
       <div class="relative flex h-24 items-center border-b border-[#979797]/20">
         <button
           type="button"
-          class="flex size-12 items-center justify-center text-white transition-colors duration-200 hover:text-brand-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-400 lg:hidden"
+          class="flex size-12 items-center justify-center text-white transition-colors duration-200 hover:text-brand-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-400 min-[1025px]:hidden"
           aria-controls="mobile-navigation"
           :aria-expanded="isMobileMenuOpen"
           :aria-label="
@@ -78,14 +78,14 @@ watch(
 
         <NuxtLink
           to="/"
-          class="absolute left-1/2 top-1/2 inline-flex -translate-x-1/2 -translate-y-1/2 items-center justify-center transition-opacity duration-200 hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-400 lg:static lg:translate-x-0 lg:translate-y-0"
+          class="absolute left-1/2 top-1/2 inline-flex -translate-x-1/2 -translate-y-1/2 items-center justify-center transition-opacity duration-200 hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-400 min-[1025px]:static min-[1025px]:translate-x-0 min-[1025px]:translate-y-0"
           aria-label="Audiophile home"
         >
           <img :src="logoSrc" alt="Audiophile" class="h-[25px] w-[143px]" />
         </NuxtLink>
 
         <nav
-          class="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 lg:block"
+          class="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 min-[1025px]:block"
           aria-label="Primary"
         >
           <ul class="flex items-center gap-9">
@@ -141,7 +141,7 @@ watch(
       leave-from-class="translate-y-0 opacity-100"
       leave-to-class="translate-y-2 opacity-0"
     >
-      <div v-if="isMobileMenuOpen" class="lg:hidden">
+      <div v-if="isMobileMenuOpen" class="min-[1025px]:hidden">
         <div
           class="fixed inset-0 top-24 bg-black/45 backdrop-blur-[2px]"
           aria-hidden="true"
