@@ -26,8 +26,8 @@ const buttonVariants = {
   primary:
     "min-h-12 min-w-40 border border-transparent bg-brand-500 px-8 py-4 text-white hover:bg-brand-400 focus-visible:outline-brand-400",
   secondary:
-    "min-h-12 min-w-40 border border-black bg-white px-8 py-4 text-black hover:bg-black hover:text-white focus-visible:outline-black",
-  dark: "min-h-12 min-w-40 border border-transparent bg-black px-8 py-4 text-white hover:bg-neutral-900 focus-visible:outline-black",
+    "min-h-12 min-w-40 border border-black bg-transparent px-8 py-4 text-black hover:bg-black hover:text-white focus-visible:outline-black",
+  dark: "min-h-12 min-w-40 border border-transparent bg-black px-8 py-4 text-white hover:border-black hover:bg-transparent focus-visible:outline-black",
   link: "gap-[13px] border-none bg-transparent px-0 py-0 focus-visible:outline-brand-400",
 } as const;
 
