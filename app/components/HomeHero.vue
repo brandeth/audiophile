@@ -10,16 +10,14 @@ const tabletHeroStyle = {
 <template>
   <section class="overflow-hidden bg-[#141414] text-white">
     <div class="relative mx-auto max-w-[1440px]">
-      <div
-        class="min-[1025px]:absolute min-[1025px]:inset-x-0 min-[1025px]:top-0 min-[1025px]:z-20"
-      >
+      <div class="md:absolute md:inset-x-0 md:top-0 md:z-20">
         <AppNavbar />
       </div>
 
       <div :style="tabletHeroStyle" class="home-hero__surface">
         <div class="mx-auto max-w-[1110px] px-6 md:px-10 xl:px-0">
           <div
-            class="grid min-h-[37rem] items-end pb-[6.75rem] pt-24 sm:min-h-[40rem] sm:pb-[7.5rem] md:max-[1024px]:justify-items-center md:max-[1024px]:items-start md:max-[1024px]:pb-[8rem] md:max-[1024px]:pt-[7.875rem] min-[1025px]:h-[730px] min-[1025px]:grid-cols-[24.875rem_minmax(0,1fr)] min-[1025px]:items-center min-[1025px]:gap-28 min-[1025px]:pb-0 min-[1025px]:pt-0"
+            class="grid min-h-[37rem] items-end pb-[6.75rem] pt-24 sm:min-h-[40rem] sm:pb-[7.5rem] md:max-[1024px]:justify-items-center md:max-[1024px]:items-start md:max-[1024px]:pb-[8rem] md:max-[1024px]:pt-[13.875rem] min-[1025px]:h-[730px] min-[1025px]:grid-cols-[24.875rem_minmax(0,1fr)] min-[1025px]:items-center min-[1025px]:gap-28 min-[1025px]:pb-0 min-[1025px]:pt-0"
           >
             <div
               class="max-w-[21.875rem] text-left md:max-[1024px]:max-w-[24rem] md:max-[1024px]:text-center min-[1025px]:max-w-[24.875rem]"
@@ -65,9 +63,10 @@ const tabletHeroStyle = {
 @media (min-width: 768px) and (max-width: 1024px) {
   .home-hero__surface {
     background-image: var(--tablet-hero-image);
-    background-position: center -2rem;
+    background-position: center center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
+    background-color: #191919;
   }
 }
 </style>
