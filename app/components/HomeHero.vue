@@ -1,20 +1,29 @@
 <script setup lang="ts">
 import heroImageHeaderUrl from "~~/assets/images/image-header.jpg";
-import heroImageAltUrl from "~~/assets/images/image-hero-alt.jpg";
+import heroImageDesktopUrl from "~~/assets/images/image-hero.jpg";
 
-const tabletHeroStyle = {
+const heroStyle = {
   "--tablet-hero-image": `url(${heroImageHeaderUrl})`,
+  "--desktop-hero-image": `url(${heroImageDesktopUrl})`,
 };
 </script>
 
 <template>
-  <section class="overflow-hidden bg-[#141414] text-white">
+  <section
+    :style="heroStyle"
+    class="home-hero relative overflow-hidden text-white"
+  >
     <div class="relative mx-auto max-w-[1440px]">
       <div class="md:absolute md:inset-x-0 md:top-0 md:z-20">
         <AppNavbar />
       </div>
 
-      <div :style="tabletHeroStyle" class="home-hero__surface">
+      <div
+        aria-hidden="true"
+        class="home-hero__desktop-image pointer-events-none absolute inset-0 hidden min-[1025px]:block"
+      />
+
+      <div class="home-hero__surface relative z-10">
         <div class="mx-auto max-w-[1110px] px-6 md:px-10 xl:px-0">
           <div
             class="grid min-h-[37rem] items-end pb-[6.75rem] pt-24 sm:min-h-[40rem] sm:pb-[7.5rem] md:max-[1024px]:justify-items-center md:max-[1024px]:items-start md:max-[1024px]:pb-[8rem] md:max-[1024px]:pt-[13.875rem] min-[1025px]:h-[730px] min-[1025px]:grid-cols-[24.875rem_minmax(0,1fr)] min-[1025px]:items-center min-[1025px]:gap-28 min-[1025px]:pb-0 min-[1025px]:pt-0"
@@ -44,14 +53,6 @@ const tabletHeroStyle = {
                 <Button to="/headphones" label="See Product" />
               </div>
             </div>
-
-            <div class="relative hidden h-full min-w-0 min-[1025px]:block">
-              <img
-                :src="heroImageAltUrl"
-                alt=""
-                class="h-full w-full object-cover object-center"
-              />
-            </div>
           </div>
         </div>
       </div>
@@ -60,10 +61,28 @@ const tabletHeroStyle = {
 </template>
 
 <style scoped>
+.home-hero {
+  background-color: #141414;
+}
+
 @media (min-width: 768px) and (max-width: 1024px) {
   .home-hero__surface {
     background-image: var(--tablet-hero-image);
     background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #191919;
+  }
+}
+
+@media (min-width: 1025px) {
+  .home-hero {
+    background-color: #191919;
+  }
+
+  .home-hero__desktop-image {
+    background-image: var(--desktop-hero-image);
+    background-position: right center;
     background-repeat: no-repeat;
     background-size: contain;
     background-color: #191919;
