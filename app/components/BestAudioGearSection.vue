@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import imageSrc from "~~/assets/images/image-best-gear.jpg";
+import defaultImageSrc from "~~/assets/images/image-best-gear.jpg";
+import tabletImageSrc from "~~/assets/images/image-best-gear-tablet.jpg";
 </script>
 
 <template>
@@ -7,9 +8,11 @@ import imageSrc from "~~/assets/images/image-best-gear.jpg";
     <div
       class="mx-auto max-w-[1110px] px-6 pb-[7.5rem] md:px-10 md:pb-24 lg:pb-[12.5rem] xl:px-0"
     >
-      <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-[7.8125rem]">
+      <div
+        class="grid items-center gap-10 md:max-[1024px]:gap-[3.9375rem] min-[1025px]:grid-cols-2 min-[1025px]:gap-[7.8125rem]"
+      >
         <div
-          class="max-w-[35.8125rem] text-center lg:max-w-[27.8125rem] lg:text-left"
+          class="mx-auto max-w-[35.8125rem] text-center min-[1025px]:mx-0 min-[1025px]:max-w-[27.8125rem] min-[1025px]:text-left"
         >
           <h2 class="text-h4 text-black md:text-h2">
             Bringing you the
@@ -27,12 +30,21 @@ import imageSrc from "~~/assets/images/image-best-gear.jpg";
           </p>
         </div>
 
-        <div class="order-first overflow-hidden rounded-[8px] lg:order-none">
-          <img
-            :src="imageSrc"
-            alt="Person enjoying premium headphones"
-            class="h-[18.75rem] w-full object-cover md:h-[18.75rem] lg:h-[36.75rem]"
-          />
+        <div
+          class="order-first overflow-hidden rounded-[8px] min-[1025px]:order-none"
+        >
+          <picture class="block">
+            <source
+              media="(min-width: 768px) and (max-width: 1024px)"
+              :srcset="tabletImageSrc"
+            />
+
+            <img
+              :src="defaultImageSrc"
+              alt="Person enjoying premium headphones"
+              class="h-[18.75rem] w-full object-cover min-[1025px]:h-[36.75rem]"
+            />
+          </picture>
         </div>
       </div>
     </div>
