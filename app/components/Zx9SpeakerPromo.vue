@@ -7,25 +7,27 @@ import circlesPatternSrc from "~~/assets/images/pattern-circles.svg";
   <section class="bg-white">
     <div class="mx-auto max-w-[1110px] px-6 pb-6 md:px-10 md:pb-8 xl:px-0">
       <div
-        class="relative isolate grid min-h-[37.5rem] overflow-hidden rounded-[8px] bg-brand-500 px-6 pb-14 pt-[3.4375rem] text-center text-white md:min-h-[45rem] md:px-14 md:pb-16 md:pt-[3.25rem] lg:min-h-[35rem] lg:grid-cols-[minmax(0,1fr)_21.875rem] lg:items-center lg:gap-[8.625rem] lg:px-[5.875rem] lg:pb-0 lg:pt-0 lg:text-left"
+        class="relative isolate grid min-h-[37.5rem] overflow-hidden rounded-[8px] bg-brand-500 px-6 pb-14 pt-[3.4375rem] text-center text-white md:min-h-[45rem] md:px-14 md:pb-16 md:pt-[3.25rem] min-[1025px]:min-h-[35rem] min-[1025px]:grid-cols-[minmax(0,1fr)_21.875rem] min-[1025px]:items-center min-[1025px]:gap-[8.625rem] min-[1025px]:px-[5.875rem] min-[1025px]:pb-0 min-[1025px]:pt-0 min-[1025px]:text-left"
       >
         <div
-          class="relative mx-auto h-[12.9375rem] w-[12.5rem] md:h-[14.8125rem] md:w-[14.8125rem] lg:mx-0 lg:h-full lg:w-full lg:self-end"
+          class="relative mx-auto h-[12.9375rem] w-[12.5rem] md:h-[14.8125rem] md:w-[14.8125rem] min-[1025px]:mx-0 min-[1025px]:h-full min-[1025px]:w-full min-[1025px]:self-end"
         >
           <img
             :src="circlesPatternSrc"
             alt=""
-            class="absolute left-1/2 top-[-7.5rem] z-[-1] w-[34.875rem] max-w-none -translate-x-1/2 md:top-[-17.75rem] md:w-[59rem] lg:left-[-15rem] lg:top-[-2.25rem] lg:w-[59rem] lg:translate-x-0"
+            class="absolute left-1/2 top-[-7.5rem] z-[-1] w-[34.875rem] max-w-none -translate-x-1/2 md:top-[-17.75rem] md:w-[59rem] min-[1025px]:left-[-15rem] min-[1025px]:top-[-2.25rem] min-[1025px]:w-[59rem] min-[1025px]:translate-x-0"
           />
 
           <img
             :src="speakerImageSrc"
             alt="ZX9 speaker"
-            class="mx-auto h-full w-auto object-contain lg:absolute lg:bottom-[-0.625rem] lg:left-[1.25rem] lg:h-[30.8125rem]"
+            class="mx-auto h-full w-auto object-contain min-[1025px]:absolute min-[1025px]:bottom-[-0.625rem] min-[1025px]:left-[1.25rem] min-[1025px]:h-[30.8125rem]"
           />
         </div>
 
-        <div class="mx-auto mt-8 max-w-[21.875rem] md:mt-16 lg:mx-0 lg:mt-0">
+        <div
+          class="mx-auto mt-8 max-w-[21.875rem] md:mt-16 min-[1025px]:mx-0 min-[1025px]:mt-0"
+        >
           <h2 class="text-h4 text-white md:text-h1">
             <span class="block">ZX9</span>
             <span class="block">Speaker</span>
