@@ -32,9 +32,11 @@ watch(
 </script>
 
 <template>
-  <header class="relative z-30 bg-transparent text-white">
+  <header
+    class="relative z-30 border-b border-[#979797]/20 bg-transparent text-white"
+  >
     <div class="mx-auto max-w-[1110px] px-6 md:px-10 xl:px-0">
-      <div class="relative flex h-24 items-center border-b border-[#979797]/20">
+      <div class="relative flex h-24 items-center">
         <button
           type="button"
           class="flex size-12 items-center justify-center text-white transition-colors duration-200 hover:text-brand-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-400 min-[1025px]:hidden"
